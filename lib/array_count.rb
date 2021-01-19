@@ -1,23 +1,11 @@
 def count_strings(array)
-  result = []
-  count = 0
-  while count < array.count do 
-    if array[count] == String 
-      result << array[count]
-    end 
-  count += 1 
-  end 
-  result.count
+  array.count do |element|
+    element.is_a?(String)
+  end
 end
 
 def count_empty_strings(array)
-  result = []
-  count = 0 
-  while count < array.count do 
-    if array[count].count == 0 
-      result << array[count]
-    end 
-  count += 1 
-  end 
-  result.count
+  array.count do |element|
+    element == "" 
+  end
 end
